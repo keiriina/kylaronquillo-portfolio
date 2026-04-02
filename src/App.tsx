@@ -19,6 +19,13 @@ function App() {
     }))
   );
 
+  const allExperiences = roles.flatMap(role => 
+    (role.experience || []).map(exp => ({
+      ...exp,
+      category: role.title.replace('\n', ' ')
+    }))
+  );
+
   const [activeProject, setActiveProject] = useState<any>(null);
 
   const handleProjectClick = (project: any) => {
@@ -38,7 +45,7 @@ function App() {
         <header>
           <a href="#about">ABOUT ME</a>
           <a href="#projects">PROJECTS</a>
-          <a href="#skills">SKILLS</a>
+          <a href="#experience">EXPERIENCE</a>
         </header>
 
         {/*  Hero: Portfolio Title Image */}
@@ -129,37 +136,32 @@ function App() {
           </div>
         </section>
 
-        {/*  Skills: Compass Layout */}
-        <section id="skills" className="section">
-          <div className="skills-compass">
-            <div className="skills-crosshair-v"></div>
-            <div className="skills-crosshair-h"></div>
+        {/*  Experience: Timeline Layout */}
+        <section id="experience" className="section">
+          <div className="whatido-header">
+            <h2>experience</h2>
+            <p style={{ fontStyle: 'italic' }}>My professional journey</p>
+          </div>
 
-            <h2 className="title skills-center-title">skills</h2>
-
-            <div className="skills-quadrant quad-tl">
-              {general.skills.topLeft?.map((skill, i) => (
-                <span key={i} className={`skill-tag pos-${i % 5}`}>{skill}</span>
-              ))}
-            </div>
-
-            <div className="skills-quadrant quad-tr">
-              {general.skills.topRight?.map((skill, i) => (
-                <span key={i} className={`skill-tag pos-${i % 5}`}>{skill}</span>
-              ))}
-            </div>
-
-            <div className="skills-quadrant quad-bl">
-              {general.skills.bottomLeft?.map((skill, i) => (
-                <span key={i} className={`skill-tag pos-${i % 5}`}>{skill}</span>
-              ))}
-            </div>
-
-            <div className="skills-quadrant quad-br">
-              {general.skills.bottomRight?.map((skill, i) => (
-                <span key={i} className={`skill-tag pos-${i % 5}`}>{skill}</span>
-              ))}
-            </div>
+          <div className="timeline">
+            {allExperiences.map((exp, idx) => (
+              <div key={idx} className="timeline-item">
+                <div className="timeline-date">{exp.date}</div>
+                <h3 className="timeline-role">{exp.role}</h3>
+                {exp.link ? (
+                  <a href={exp.link} target="_blank" rel="noopener noreferrer" className="timeline-company">
+                    {exp.company}
+                  </a>
+                ) : (
+                  <div className="timeline-company">{exp.company}</div>
+                )}
+                <ul className="timeline-desc">
+                  {exp.description.map((desc: string, j: number) => (
+                    <li key={j}>{desc}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </section>
 

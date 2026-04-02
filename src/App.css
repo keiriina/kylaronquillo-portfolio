@@ -446,118 +446,77 @@ header a:hover {
 }
 
 
-/* ── Skills Section ───────────────────────────────────────────────────────────
-   Compass layout with "skills" cut out of green crosshairs.
-   Content comes from src/data/general.json → "skills".
-   ──────────────────────────────────────────────────────────────────────────── */
-.skills-compass {
-  position: relative;
-  max-width: 900px;
-  height: 500px;
+/* ── Experience Section (Timeline) ──────────────────────────────────────────── */
+.timeline {
+  max-width: 800px;
   margin: 60px auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-left: 2px solid var(--beige);
+  padding-left: 40px;
+  position: relative;
 }
 
-/* Crosshair Lines */
-.skills-crosshair-v {
+.timeline-item {
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-item::before {
+  content: "";
   position: absolute;
-  width: 2px;
-  height: 80%;
-  background: #a3c14a;
-  /* var(--green) */
-  z-index: 1;
+  left: -48px; /* lines up with the border */
+  top: 5px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--orange);
+  border: 4px solid var(--white);
+  box-shadow: 0 0 0 2px var(--beige);
 }
 
-.skills-crosshair-h {
-  position: absolute;
-  height: 2px;
-  width: 80%;
-  background: #a3c14a;
-  /* var(--green) */
-  z-index: 1;
-}
-
-/* Large "skills" heading in the center */
-.skills-center-title {
-  font-family: var(--font-title);
-  color: var(--green);
-  font-size: 110px;
-  line-height: 1;
-  z-index: 10;
-  background: var(--bg-color, White);
-  /* Ensure it cuts out the lines cleanly */
-  padding: 0 20px;
-}
-
-/* Four quadrants containing the scattered words */
-.skills-quadrant {
-  position: absolute;
-  width: 45%;
-  height: 45%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  z-index: 5;
-}
-
-.quad-tl {
-  top: 0;
-  left: 0;
-}
-
-.quad-tr {
-  top: 0;
-  right: 0;
-}
-
-.quad-bl {
-  bottom: 0;
-  left: 0;
-}
-
-.quad-br {
-  bottom: 0;
-  right: 0;
-}
-
-/* The words themselves, dynamically scattered */
-.skill-tag {
+.timeline-date {
+  font-weight: bold;
+  color: var(--orange);
+  margin-bottom: 5px;
   font-family: var(--font-text);
-  font-size: 1.2rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.timeline-role {
+  font-size: 1.8rem;
+  font-family: var(--font-text);
   color: var(--dark);
-  text-transform: lowercase;
+  margin-bottom: 5px;
+  line-height: 1.2;
 }
 
-/* Pseudo-random scatter patterns based on index positioning */
-.skills-quadrant .skill-tag.pos-0 {
-  align-self: center;
-  margin-left: -10%;
+.timeline-company {
+  font-size: 1.1rem;
+  font-family: var(--font-text);
+  color: #a3c14a;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 15px;
+  display: inline-block;
 }
 
-.skills-quadrant .skill-tag.pos-1 {
-  align-self: flex-start;
-  margin-left: 15%;
-  margin-top: -10px;
+a.timeline-company:hover {
+  color: var(--orange);
+  text-decoration: underline;
 }
 
-.skills-quadrant .skill-tag.pos-2 {
-  align-self: flex-end;
-  margin-right: 20%;
-  margin-top: -5px;
+.timeline-desc {
+  list-style-type: disc;
+  margin-left: 20px;
+  color: var(--dark);
+  opacity: 0.8;
+  font-size: 1rem;
+  line-height: 1.6;
 }
-
-.skills-quadrant .skill-tag.pos-3 {
-  align-self: center;
-  margin-left: 20%;
-}
-
-.skills-quadrant .skill-tag.pos-4 {
-  align-self: flex-end;
-  margin-right: 5%;
-}
-
 
 /* ── Contact Section ──────────────────────────────────────────────────────────
    Full-width section (outside the container) so the map can bleed to the left.
@@ -763,46 +722,17 @@ header a:hover {
     height: 100px;
   }
 
-  /* Skills Compass Scaling */
-  .skills-compass {
-    height: 350px;
-    margin: 40px auto;
+  /* Experience Timeline Scaling */
+  .timeline {
+    padding-left: 30px;
   }
 
-  .skills-center-title {
-    font-size: 48px;
-    padding: 0 10px;
+  .timeline-item::before {
+    left: -38px;
   }
 
-  .skills-quadrant {
-    width: 48%;
-    /* Let words have max breathing room on phone */
-  }
-
-  .skill-tag {
-    font-size: 0.75rem;
-    padding: 2px;
-  }
-
-  /* Tone down random scattering slightly on strict mobile screens */
-  .skills-quadrant .skill-tag.pos-0 {
-    margin-left: -5%;
-  }
-
-  .skills-quadrant .skill-tag.pos-1 {
-    margin-left: 5%;
-  }
-
-  .skills-quadrant .skill-tag.pos-2 {
-    margin-right: 5%;
-  }
-
-  .skills-quadrant .skill-tag.pos-3 {
-    margin-left: 5%;
-  }
-
-  .skills-quadrant .skill-tag.pos-4 {
-    margin-right: 5%;
+  .timeline-role {
+    font-size: 1.5rem;
   }
 
   /* Contact */
