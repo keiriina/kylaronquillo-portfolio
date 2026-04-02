@@ -565,7 +565,7 @@ header a:hover {
   min-width: 40px;
   height: 40px;
   padding: 0 10px;
-  background: var(--dark);
+  background: var(--orange);
   color: var(--white);
   border-radius: 5px;
   display: flex;
