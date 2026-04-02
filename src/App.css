@@ -205,7 +205,7 @@ header a:hover {
 
 .panel-title {
   font-family: var(--font-text);
-  font-size: 2.8rem;
+  font-size: 2.2rem;
   color: var(--dark);
   transition: color 0.4s;
   line-height: 1.1;
@@ -241,17 +241,17 @@ header a:hover {
 }
 
 .panel-image-preview {
-  position: absolute;
-  bottom: 40px;
-  right: 40px;
+  margin-top: 20px;
 }
 
 .panel-image-preview img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 4px;
   object-fit: cover;
-  border: 4px solid var(--white);
+  border: 1px solid var(--beige);
+  display: block;
 }
 
 .panel-icon {
@@ -275,10 +275,18 @@ header a:hover {
 }
 
 /* ── Role Popup Modal ─────────────────────────────────────────────────────────
-   Appears when a role card is clicked.
-   Shows experience, skills, and projects for that role.
-   Content comes from src/data/pm.json, aidev.json, or smm.json.
+   Appears when a project card is clicked.
    ──────────────────────────────────────────────────────────────────────────── */
+
+@keyframes modalOverlayFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalEntry {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
 
 /* Dark background overlay */
 .modal-overlay {
@@ -292,6 +300,7 @@ header a:hover {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  animation: modalOverlayFade 0.3s ease-out;
 }
 
 /* White popup box */
@@ -304,6 +313,7 @@ header a:hover {
   padding: 40px 50px;
   overflow-y: auto;
   position: relative;
+  animation: modalEntry 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* × close button */
