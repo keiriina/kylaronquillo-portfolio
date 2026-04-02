@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Long+Cang&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  --orange: #ea8600;
+  --green: #a3c14a;
+  --beige: #fcf2e3;
+  --dark: #1d1d1d;
+  --white: #ffffff;
+
+  --font-title: 'Long Cang', cursive;
+  --font-text: 'Space Mono', monospace;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-text);
+  color: var(--dark);
+  background-color: var(--white);
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: normal;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}

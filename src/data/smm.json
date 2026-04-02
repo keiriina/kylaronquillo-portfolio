@@ -1,0 +1,18 @@
+{
+  "id": "smm",
+  "title": "Social Media\nManagement",
+  "experience": [],
+  "skills": [
+    "Canva",
+    "Figma",
+    "Affinity"
+  ],
+  "projects": [
+    {
+      "title": "Social Media Campaign",
+      "description": "Campaign details.",
+      "image": "https://picsum.photos/400/300?random=4",
+      "link": "https://example.com/social-media"
+    }
+  ]
+}

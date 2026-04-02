@@ -1,0 +1,50 @@
+{
+  "greeting": "Hi, I'm Kyla!",
+  "description": "I'm a Computer Science undergrad who has a keen interest in AI and Project Management. I consider myself a hardworking and passionate person who loves contributing to meaningful work!",
+  "education": [
+    {
+      "institution": "ATENEO DE NAGA UNIVERSITY",
+      "date": "August 2022 - May 2026",
+      "degree": "Bachelor of Science in Computer Science",
+      "details": [
+        "QPI: 3.6",
+        "DOST-SEI Merit Scholar",
+        "Hack4Gov 3 Region V Champion and National Participant",
+        "National Geographic Society and The Nature Conservancy Seed Funding Grantee"
+      ]
+    }
+  ],
+  "skills": {
+    "topLeft": [
+      "affinity",
+      "figma",
+      "canva"
+    ],
+    "topRight": [
+      "reactjs",
+      "python",
+      "nextjs",
+      "n8n",
+      "restapi"
+    ],
+    "bottomLeft": [
+      "affinity",
+      "figma",
+      "canva"
+    ],
+    "bottomRight": [
+      "google workspace",
+      "clickup",
+      "jira",
+      "hubspot",
+      "notion"
+    ]
+  },
+  "contact": {
+    "email": "name@gmail.com",
+    "phone": "09213863017",
+    "linkedin": "https://linkedin.com",
+    "github": "https://github.com",
+    "medium": "https://medium.com"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "aid",
+  "title": "AI and\nDevelopment",
+  "experience": [
+    {
+      "role": "AI Operations Intern",
+      "company": "SmartCT",
+      "link": "https://www.smartct.org",
+      "date": "June 2025 - July 2025",
+      "description": [
+        "Designed and proposed a Retrieval-Augmented Generation (RAG) AI matchmaking system for freelancer-job matching, including workflow design, cost estimation, and implementation timeline.",
+        "Architected an Agentic RAG recommendation pipeline using n8n, OpenAI embeddings, and PGVector, enabling semantic search-based freelancer ranking."
+      ]
+    },
+    {
+      "role": "Community Conservation, Data Visualization, and Mapping Extern",
+      "company": "Codebility",
+      "link": "https://www.codebility.tech/",
+      "date": "Feb 2025 - Apr 2025",
+      "description": [
+        "Implemented Kanban methodology to improve workflow, achieving 88% adherence to project deadlines.",
+        "Designed wireframes for UI/UX designers, ensuring project goals align with visual execution."
+      ]
+    }
+  ],
+  "skills": [
+    "reactjs",
+    "python",
+    "nextjs",
+    "n8n",
+    "restapi"
+  ],
+  "projects": [
+    {
+      "title": "Slime Mould Algorithm for Road Network Optimization",
+      "description": "Designed and proposed a Retrieval-Augmented Generation (RAG) AI matchmaking system for freelancer-job matching, including workflow design, cost estimation, and implementation timeline.",
+      "image": "https://picsum.photos/400/300?random=2",
+      "link": "https://github.com/example/slime-mould"
+    },
+    {
+      "title": "Slime Mould Algorithm for Road Network Optimization (V2)",
+      "description": "Another instance of the RAG application or something similar.",
+      "image": "https://picsum.photos/400/300?random=3",
+      "link": "https://github.com/example/slime-mould-v2"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "pm",
+  "title": "Project\nManagement",
+  "experience": [],
+  "skills": ["Notion", "ClickUp", "Jira", "Asana"],
+  "projects": [
+    {
+      "title": "Project Management Toolkit",
+      "description": "Designed and proposed a comprehensive toolkit.",
+      "image": "https://picsum.photos/400/300?random=1",
+      "link": "https://example.com/project-management"
+    }
+  ]
+}
