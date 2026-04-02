@@ -13,7 +13,8 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 96px; /* Approx 1 inch horizontal margin */
+  padding: 0 96px;
+  /* Approx 1 inch horizontal margin */
 }
 
 .section {
@@ -98,9 +99,10 @@ header a:hover {
 
 /* "about me" and "education" subheadings */
 .about-col h2,
-.education-col h2 {
+.education-col h2,
+.whatido-header h2 {
   font-family: var(--font-text);
-  color: var(--orange);
+  color: #a3c14a;
   font-size: 3.5rem;
   margin-bottom: 20px;
 }
@@ -146,61 +148,131 @@ header a:hover {
   margin-bottom: 10px;
 }
 
-/* ── What I Do Section ────────────────────────────────────────────────────────
-   Staggered column of clickable role cards.
-   Each card shows an illustration image (frame-pm.png, etc.)
-   Card positions (left/right offset) are set per .role-card.pm / .aid / .smm.
+/* ── Projects Section (Accordion) ─────────────────────────────────────────────
+   Horizontally stacked tall vertical cards that expand on hover.
    ──────────────────────────────────────────────────────────────────────────── */
 .whatido-header {
   text-align: right;
   margin-bottom: 0;
 }
 
-.roles-container {
-  position: relative;
-  max-width: 1000px;
-  height: 480px;
-  margin: 60px auto;
+.projects-accordion {
+  display: flex;
+  height: 600px;
+  width: calc(100% + 2 * 96px);
+  margin-left: -96px;
+  border-top: 1px solid var(--beige);
+  border-bottom: 1px solid var(--beige);
+  margin-top: 60px;
 }
 
-.role-card {
-  position: absolute;
+.project-panel {
+  flex: 1; 
+  border-right: 1px solid var(--beige);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.4s ease;
   cursor: pointer;
-  transition: transform 0.2s ease, z-index 0s;
-  z-index: 1;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--white);
 }
 
-.role-card:hover {
-  transform: scale(1.05);
-  /* slight zoom on hover */
-  z-index: 2;
-  /* pull to front on hover */
+.project-panel:last-child {
+  border-right: none;
 }
 
-.role-card img {
-  width: 100%;
-  border-radius: 10px;
-  height: auto;
-  display: block;
+.project-panel:hover {
+  flex: 2.5; 
 }
 
-/* Individual card positions — adjust top/left/right & width to reposition or resize */
-.role-card.pm {
-  top: 0;
-  left: 0%;
-  width: 340px;
+.panel-header {
+  font-family: var(--font-text);
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: var(--dark);
+  opacity: 0.5;
+  letter-spacing: 1px;
 }
 
-.role-card.aid {
-  top: 50px;
-  left: 40%;
-  width: 320px;
+.panel-title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  margin: 40px 0;
 }
 
-.role-card.smm {
-  top: 260px;
-  left: 2%;
-  width: 420px;
+.panel-title {
+  font-family: var(--font-text);
+  font-size: 3rem;
+  color: var(--dark);
+  transition: color 0.4s;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.project-panel:hover .panel-title {
+  color: var(--orange);
+  white-space: normal; 
+}
+
+.panel-preview {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.6s ease, max-height 0.6s ease;
+  margin-top: 0;
+}
+
+.project-panel:hover .panel-preview {
+  opacity: 1;
+  max-height: 800px;
+  margin-top: 20px;
+}
+
+.panel-desc {
+  font-family: var(--font-text);
+  font-size: 0.95rem;
+  color: var(--dark);
+  margin-bottom: 20px;
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+.panel-image-preview {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+}
+
+.panel-image-preview img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--white);
+}
+
+.panel-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto; 
+  transition: all 0.4s ease;
+  color: var(--dark);
+}
+
+.project-panel:hover .panel-icon {
+  background-color: var(--orange);
+  border-color: var(--orange);
+  color: var(--white);
+  transform: rotate(-45deg);
 }
 
 /* ── Role Popup Modal ─────────────────────────────────────────────────────────
@@ -631,46 +703,48 @@ header a:hover {
     font-size: 2rem;
   }
 
-  /* What I Do - override absolute positioning so cards stack natively */
+  /* Projects - override absolute positioning so cards stack natively */
   .whatido-header {
     text-align: center;
   }
 
-  .roles-container {
+  .projects-accordion {
     height: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    margin: 40px auto;
+    align-items: stretch;
+    width: calc(100% + 40px);
+    margin-left: -20px;
   }
 
-  .role-card {
-    position: static;
-    width: 100%;
-    max-width: 340px;
-    margin: 0;
+  .project-panel {
+    border-right: none;
+    border-bottom: 1px solid var(--beige);
+    flex: none;
+    padding: 20px;
   }
 
-  .role-card.pm {
-    position: static;
-    width: 100%;
-    max-width: 280px;
-    margin: 0;
+  .project-panel:last-child {
+    border-bottom: none;
   }
 
-  .role-card.aid {
-    position: static;
-    width: 100%;
-    max-width: 240px;
-    margin: 0;
+  .project-panel:hover {
+    flex: none;
   }
 
-  .role-card.smm {
-    position: static;
-    width: 100%;
-    max-width: 340px;
-    margin: 0;
+  .panel-title {
+    font-size: 2rem;
+    white-space: normal;
+  }
+
+  .panel-image-preview img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .panel-icon {
+    width: 32px;
+    height: 32px;
   }
 
   /* Modal */

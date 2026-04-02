@@ -1,6 +1,5 @@
 {
-  "greeting": "Hi, I'm Kyla Ronquillo!",
-  "description": "I'm a Computer Science undergrad who has a keen interest in AI and Project Management. I consider myself a hardworking and passionate person who loves contributing to meaningful work!",
+  "description": "I'm a multi-disciplinary individual who builds, grows, and markets digital products and programs. I love contributing to meaningful work.",
   "education": [
     {
       "institution": "ATENEO DE NAGA UNIVERSITY",
@@ -41,10 +40,8 @@
     ]
   },
   "contact": {
-    "email": "name@gmail.com",
-    "phone": "09213863017",
-    "linkedin": "https://linkedin.com",
-    "github": "https://github.com",
-    "medium": "https://medium.com"
+    "linkedin": "https://www.linkedin.com/in/kylaronquillo/",
+    "github": "https://github.com/keiriina",
+    "medium": "https://medium.com/@kylasbronquillo"
   }
 }

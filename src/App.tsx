@@ -2,38 +2,31 @@ import { useState } from 'react';
 import './App.css';
 
 import headImg from './assets/head.png';
-import frameAi from './assets/frame-ai.png';
-import framePm from './assets/frame-pm.png';
-import frameSocmed from './assets/frame-socmed.png';
 
 import general from './data/general.json';
 import pmData from './data/pm.json';
 import aidData from './data/aidev.json';
 import smmData from './data/smm.json';
-import RoleModal from './components/RoleModal';
+import ProjectModal from './components/ProjectModal';
 
 const roles = [pmData, aidData, smmData];
 
-
-const imageMap: Record<string, string> = {
-  pm: framePm,
-  aid: frameAi,
-  smm: frameSocmed
-};
-
 function App() {
-  // For the role card
-  const [activeRole, setActiveRole] = useState<any>(null);
+  const allProjects = roles.flatMap(role => 
+    (role.projects || []).map(proj => ({
+      ...proj,
+      role: role.title.replace('\n', ' ')
+    }))
+  );
 
-  const handleRoleClick = (role: any) => {
-    setActiveRole({
-      ...role,
-      image: imageMap[role.id]
-    });
+  const [activeProject, setActiveProject] = useState<any>(null);
+
+  const handleProjectClick = (project: any) => {
+    setActiveProject(project);
   };
 
   const closeModal = () => {
-    setActiveRole(null);
+    setActiveProject(null);
   };
 
   return (
@@ -44,7 +37,7 @@ function App() {
         {/*  Navigation */}
         <header>
           <a href="#about">ABOUT ME</a>
-          <a href="#whatido">WHAT I DO</a>
+          <a href="#projects">PROJECTS</a>
           <a href="#skills">SKILLS</a>
         </header>
 
@@ -55,7 +48,6 @@ function App() {
 
         {/*  About: Greeting + About Me + Education */}
         <section id="about" className="section">
-          <h1 className="about-header">{general.greeting}</h1>
           <div className="about-grid">
             {/* Left column: About Me */}
             <div className="about-col">
@@ -101,21 +93,37 @@ function App() {
           </div>
         </section>
 
-        {/*  What I Do: Clickable Role Cards */}
-        <section id="whatido" className="section">
+        {/*  Projects: Accordion Layout */}
+        <section id="projects" className="section">
           <div className="whatido-header">
-            <h2 className="title">what I do?</h2>
-            <p style={{ fontStyle: 'italic' }}>I am someone who can wear more than one hat!</p>
+            <h2>projects</h2>
+            <p style={{ fontStyle: 'italic' }}>Some of my recent work</p>
           </div>
 
-          <div className="roles-container">
-            {roles.map(role => (
-              <div
-                key={role.id}
-                className={`role-card ${role.id}`}
-                onClick={() => handleRoleClick(role)}
+          <div className="projects-accordion">
+            {allProjects.map((proj, idx) => (
+              <div 
+                key={idx} 
+                className="project-panel" 
+                onClick={() => handleProjectClick(proj)}
               >
-                <img src={imageMap[role.id]} alt={role.title.replace('\n', ' ')} />
+                <div className="panel-header">
+                  <span>0{idx + 1} // {proj.role.toUpperCase()}</span>
+                </div>
+                <div className="panel-title-container">
+                  <h3 className="panel-title">{proj.title}</h3>
+                  <div className="panel-preview">
+                     <p className="panel-desc">{proj.description}</p>
+                     {proj.image && (
+                       <div className="panel-image-preview">
+                         <img src={proj.image} alt={proj.title} />
+                       </div>
+                     )}
+                  </div>
+                </div>
+                <div className="panel-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </div>
               </div>
             ))}
           </div>
@@ -156,7 +164,7 @@ function App() {
         </section>
 
         {/* Role popup modal — appears when a role card is clicked */}
-        {activeRole && <RoleModal role={activeRole} onClose={closeModal} />}
+        {activeProject && <ProjectModal project={activeProject} onClose={closeModal} />}
       </div>
 
 
