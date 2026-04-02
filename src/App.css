@@ -247,10 +247,11 @@ header a:hover {
 
 .panel-image-preview img {
   width: 100%;
-  max-width: 300px;
-  height: auto;
+  max-width: 100%;
+  max-height: 240px;
   border-radius: 4px;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: left bottom;
   border: 1px solid var(--beige);
   display: block;
 }
@@ -258,6 +259,9 @@ header a:hover {
 .panel-icon {
   width: 48px;
   height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  flex-shrink: 0;
   border-radius: 50%;
   border: 1px solid var(--dark);
   display: flex;
