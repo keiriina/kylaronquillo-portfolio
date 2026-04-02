@@ -32,6 +32,7 @@
   "projects": [
     {
       "title": "Slime Mould Algorithm for Road Network Optimization",
+      "caseStudy": "slime_mould",
       "description": "Build a road optimization web application that utilizes the Slime Mould Algorithm to find the most optimal path for road networks.",
       "image": "",
       "link": ""

@@ -12,14 +12,14 @@ import ProjectModal from './components/ProjectModal';
 const roles = [pmData, aidData, smmData];
 
 function App() {
-  const allProjects = roles.flatMap(role => 
+  const allProjects = roles.flatMap(role =>
     (role.projects || []).map(proj => ({
       ...proj,
       role: role.title.replace('\n', ' ')
     }))
   );
 
-  const allExperiences = roles.flatMap(role => 
+  const allExperiences = roles.flatMap(role =>
     (role.experience || []).map(exp => ({
       ...exp,
       category: role.title.replace('\n', ' ')
@@ -104,14 +104,13 @@ function App() {
         <section id="projects" className="section">
           <div className="whatido-header">
             <h2>projects</h2>
-            <p style={{ fontStyle: 'italic' }}>Some of my recent work</p>
           </div>
 
           <div className="projects-accordion">
             {allProjects.map((proj, idx) => (
-              <div 
-                key={idx} 
-                className="project-panel" 
+              <div
+                key={idx}
+                className="project-panel"
                 onClick={() => handleProjectClick(proj)}
               >
                 <div className="panel-header">
@@ -120,12 +119,12 @@ function App() {
                 <div className="panel-title-container">
                   <h3 className="panel-title">{proj.title}</h3>
                   <div className="panel-preview">
-                     <p className="panel-desc">{proj.description}</p>
-                     {proj.image && (
-                       <div className="panel-image-preview">
-                         <img src={proj.image} alt={proj.title} />
-                       </div>
-                     )}
+                    <p className="panel-desc">{proj.description}</p>
+                    {proj.image && (
+                      <div className="panel-image-preview">
+                        <img src={proj.image} alt={proj.title} />
+                      </div>
+                    )}
                   </div>
                 </div>
                 <div className="panel-icon">
@@ -140,7 +139,6 @@ function App() {
         <section id="experience" className="section">
           <div className="whatido-header">
             <h2>experience</h2>
-            <p style={{ fontStyle: 'italic' }}>My professional journey</p>
           </div>
 
           <div className="timeline">

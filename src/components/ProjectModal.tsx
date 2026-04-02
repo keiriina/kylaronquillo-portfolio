@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css';
+import { CaseStudyComponents } from '../projects';
 
 interface ProjectModalProps {
   project: any;
@@ -8,6 +9,8 @@ interface ProjectModalProps {
 
 const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
   if (!project) return null;
+
+  const CaseStudy = project.caseStudy ? CaseStudyComponents[project.caseStudy] : null;
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -32,12 +35,19 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
             {project.role}
           </div>
 
-          <p style={{ fontSize: '1rem', lineHeight: '1.7', textAlign: 'justify', margin: '0 0 20px 0', color: 'var(--dark)' }}>
-            {project.description}
-          </p>
-
-          {project.image && (
-             <img src={project.image} alt={project.title} style={{ width: '100%', borderRadius: '4px', marginTop: '10px', display: 'block', border: '1px solid var(--beige)' }} />
+          {CaseStudy ? (
+            <div className="case-study-content" style={{ width: '100%' }}>
+              <CaseStudy />
+            </div>
+          ) : (
+            <>
+              <p style={{ fontSize: '1rem', lineHeight: '1.7', textAlign: 'justify', margin: '0 0 20px 0', color: 'var(--dark)' }}>
+                {project.description}
+              </p>
+              {project.image && (
+                 <img src={project.image} alt={project.title} style={{ width: '100%', borderRadius: '4px', marginTop: '10px', display: 'block', border: '1px solid var(--beige)' }} />
+              )}
+            </>
           )}
 
           {project.link && (
