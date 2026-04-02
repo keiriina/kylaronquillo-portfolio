@@ -1,5 +1,8 @@
 {
-  "description": "I'm a multi-disciplinary individual who builds, grows, and markets digital products and programs. I love contributing to meaningful work.",
+  "description": [
+    "I’m a <strong>multidisciplinary individual who develops, manages, and grows digital products and programs.</strong> I enjoy contributing to meaningful work that creates real impact.",
+    "I have experience in data analysis and management, project coordination, reporting, and social media strategy, alongside a strong foundation in web development."
+  ],
   "education": [
     {
       "institution": "ATENEO DE NAGA UNIVERSITY",
