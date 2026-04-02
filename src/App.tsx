@@ -6,7 +6,6 @@ import frameAi from './assets/frame-ai.png';
 import framePm from './assets/frame-pm.png';
 import frameSocmed from './assets/frame-socmed.png';
 import contactMe from './assets/contact-me.png';
-import mapImg from './assets/map.jpg';
 
 import general from './data/general.json';
 import pmData from './data/pm.json';
