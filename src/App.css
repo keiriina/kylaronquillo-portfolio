@@ -13,8 +13,7 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 96px;
-  /* Approx 1 inch horizontal margin */
+  padding: 0 20px;
 }
 
 .section {
@@ -159,8 +158,8 @@ header a:hover {
 .projects-accordion {
   display: flex;
   height: 600px;
-  width: calc(100% + 2 * 96px);
-  margin-left: -96px;
+  width: calc(100% + 40px);
+  margin-left: -20px;
   border-top: 1px solid var(--beige);
   border-bottom: 1px solid var(--beige);
   margin-top: 60px;
@@ -206,16 +205,16 @@ header a:hover {
 
 .panel-title {
   font-family: var(--font-text);
-  font-size: 3rem;
+  font-size: 2.8rem;
   color: var(--dark);
   transition: color 0.4s;
   line-height: 1.1;
-  white-space: nowrap;
+  white-space: normal;
+  word-wrap: break-word;
 }
 
 .project-panel:hover .panel-title {
   color: var(--orange);
-  white-space: normal; 
 }
 
 .panel-preview {
