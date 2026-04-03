@@ -134,9 +134,9 @@ function App() {
                         ))}
                       </div>
                     )}
-                    {proj.image && (
+                    {(proj as any).image && (
                       <div className="panel-image-preview">
-                        <img src={proj.image} alt={proj.title} />
+                        <img src={(proj as any).image} alt={proj.title} />
                       </div>
                     )}
                   </div>
