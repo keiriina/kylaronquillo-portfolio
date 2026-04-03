@@ -127,6 +127,13 @@ function App() {
                   <h3 className="panel-title">{proj.title}</h3>
                   <div className="panel-preview">
                     <p className="panel-desc">{proj.description}</p>
+                    {proj.skills && proj.skills.length > 0 && (
+                      <div className="panel-skills">
+                        {proj.skills.map((skill: string) => (
+                          <span key={skill} className="skill-badge">{skill}</span>
+                        ))}
+                      </div>
+                    )}
                     {proj.image && (
                       <div className="panel-image-preview">
                         <img src={proj.image} alt={proj.title} />

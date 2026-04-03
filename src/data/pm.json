@@ -1,14 +1,56 @@
 {
   "id": "pm",
   "title": "Project\nManagement",
-  "experience": [],
-  "skills": ["Notion", "ClickUp", "Jira", "Asana"],
+  "experience": [
+    {
+      "role": "Project Assistant",
+      "company": "SmartCT",
+      "link": "https://smartct.org/",
+      "date": "Aug 2025 - Nov 2025",
+      "description": [
+        "Managed 55 institutional partners and 138 Master Trainers, streamlining stakeholder communication and ensuring 100% alignment with project timelines.",
+        "Facilitated the onboarding and engagement of project beneficiaries, contributing to a reach of 91,239 individuals (28.5% of the total target beneficiaries)",
+        "Spearheaded administrative setup and served as a program host for virtual events, enhancing partner relations and ensuring professional delivery of campaign initiatives"
+      ]
+    },
+    {
+      "role": "Project Manager Intern",
+      "company": "Codebility",
+      "link": "",
+      "date": "Oct 2024 - Apr 2025",
+      "description": [
+        "Reviewed Figma designs and code implementation, providing actionable feedback to maintain alignment with project requirements and quality standards.",
+        "Maintained 88% adherence to project deadlines and timelines, streamlining workflow processes and tracking progress through project management tools."
+      ]
+    }
+  ],
   "projects": [
     {
-      "title": "Project Management Toolkit",
-      "description": "Designed and proposed a comprehensive toolkit.",
-      "image": "https://picsum.photos/400/300?random=1",
-      "link": "https://example.com/project-management"
+      "title": "Project Balik Bakawan",
+      "caseStudy": "balik_bakawan",
+      "coverImage": "/assets/cases/projectbb.jpg",
+      "description": "A community-based mangrove restoration project in Brgy. Sabang, Del Gallego, aimed at restoring mangrove ecosystems and empowering local communities through sustainable livelihood opportunities.",
+      "link": "",
+      "skills": [
+        "Grant Writing",
+        "Data Analysis",
+        "Community Education",
+        "Logistics",
+        "GIS Strategy"
+      ]
+    },
+    {
+      "title": "Bicol Youth for Technology Expo (BYTE)",
+      "coverImage": "/assets/cases/byte.jpg",
+      "description": "Led an outreach caravan and coordinated logistics for a regional technology advocacy initiative serving over 1,000 participants. Managed volunteer teams and facilitated expert sessions on modern project management tools and workflows.",
+      "link": "",
+      "skills": [
+        "Notion",
+        "Google Workspace",
+        "n8n Automation",
+        "HubSpot",
+        "Event Management"
+      ]
     }
   ]
 }

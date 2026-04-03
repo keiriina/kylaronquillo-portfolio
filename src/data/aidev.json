@@ -31,11 +31,39 @@
   ],
   "projects": [
     {
+      "title": "SGX Derivatives Data Pipeline Automation",
+      "description": "Developed a Python CLI tool to automatically download daily SGX derivative tick data and trade cancellation files. Implemented automated scheduling using systemd services with retry mechanisms and failure recovery, alongside structured logging and configurable execution to support debugging and historical backfills.",
+      "link": "",
+      "skills": [
+        "Python",
+        "Playwright",
+        "Systemd",
+        "Logging Automation"
+      ]
+    },
+    {
       "title": "Slime Mould Algorithm for Road Network Optimization",
       "caseStudy": "slime_mould",
-      "description": "Developed a comprehensive road optimization web application leveraging the biological Slime Mould Algorithm to procedurally simulate and construct highly efficient road networks.",
-      "image": "/assets/cases/sma-opti.png",
-      "link": ""
+      "description": "Developed a slime mould-inspired simulation algorithm (Physarum polycephalum) to optimize urban road networks using attractor and non-attractor constraints. Integrated OpenStreetMap boundary data to constrain agent movement, and converted trails into a NetworkX graph with shortest-path refinement.",
+      "link": "",
+      "skills": [
+        "Python",
+        "NetworkX",
+        "OSMnx",
+        "Simulation Modeling",
+        "Next.js"
+      ]
+    },
+    {
+      "title": "Mangroves Conservation Chatbot",
+      "description": "Built an AI-powered chatbot using Cohere and FastAPI to answer mangrove conservation questions grounded on PDF-based knowledge sources extracted via PyMuPDF. Deployed as a REST API designed to deliver simplified, community-friendly responses with conversation history controls.",
+      "link": "",
+      "skills": [
+        "FastAPI",
+        "Cohere",
+        "PyMuPDF",
+        "NLP"
+      ]
     }
   ]
 }
